@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Order;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailable;
 
 class ProductController extends Controller
 {
@@ -145,10 +147,16 @@ class ProductController extends Controller
 
         $request->session()->forget('cart');
 
+        // Send EMail
+        $email = $order->customer_email;
+        $order_id = $order->id;
+        Mail::to($order->customer_email)->send(new SendMailable($email));
+
         // Load confirm page, based on status
         return view('/confirmorder')->with(['order_id' => $order->id,'status' => 'Confirmed','total_price' => $order->total_price]);
         
-        //Send Thank you email
     }
+
+
 
 }

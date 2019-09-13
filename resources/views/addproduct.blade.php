@@ -26,7 +26,6 @@
 
         <div>
             <label>Product Category : </label>
-            <!-- <input type="text" class="form-control" name="product_category" id="product_category">             -->
             <select name ="product_category" class="form-control">
             <option value="">Select Category</option>
             @foreach($categories as $category)

@@ -40,11 +40,9 @@ class AdminController extends Controller
 						->get();
 						
 				if(count($result)>0){			
-					// session(['email' => $email]);
 					$request->session()->put('email',$email);
 					$products = Product::all();
 					return redirect('/admin/showproducts')->with('products',$products);
-					// return view('products')->with('products',$products);
 				}
 				else{
 					return redirect('admin/')->with('invalid_login', 'Invalid Credentials !');
@@ -53,8 +51,8 @@ class AdminController extends Controller
     }
     
 
-    	/*
-		To load category addition page
+	/*
+	To load category addition page
 	*/
 	public function addcategory(){
 		return view('addcategory');
