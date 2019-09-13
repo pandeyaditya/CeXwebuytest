@@ -31,8 +31,8 @@ Admin End :
 
 http://127.0.0.1/admin
 
-1)Login using the credentials (used while signup)
-2)Add category
-3)Add product
-4)View Orders
-5)URL for API response "127.0.0.1/orders"
+1) Login using the credentials (used while signup)
+2) Add category
+3) Add product
+4) View Orders
+5) URL for API response "127.0.0.1/orders"
